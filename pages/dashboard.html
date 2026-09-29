@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bench Sales Dashboard | Astir</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Project stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER (fixed)
+============================================================= -->
+<header class="topbar">
+  <div class="d-flex align-items-center">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle menu">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="brand">
+      <!-- <img src="../images/logo.svg" alt="Astir logo" height="30">
+      <div class="brand-text">
+        <small>Information. Insight. Results.</small>
+      </div> -->
+      <img src="../images/logo.png" alt="Astir logo" height="30">
+    </div>
+  </div>
+
+  <!-- <div class="topbar-search">
+    <div class="input-group">
+      <span class="input-group-text bg-transparent border-0 p-0 pe-2"><i class="bi bi-search"></i></span>
+      <input type="text" class="form-control p-0" placeholder="Search...">
+    </div>
+  </div> -->
+
+  <div class="topbar-right">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge rounded-pill bg-danger">3</span>
+    </button> -->
+
+    <div class="dropdown">
+      <button class="user-chip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="avatar-circle">SB</span>
+        <span class="user-name">Swaroopa Bhupathi</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>My Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a></li>
+      </ul>
+    </div>
+
+    <button class="btn-logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- ============================================================
+     SIDEBAR (collapsible)
+============================================================= -->
+<nav class="sidebar" id="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="dashboard.html">
+        <i class="bi bi-house-door-fill"></i><span class="label">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hotlist.html">
+        <i class="bi bi-people-fill"></i><span class="label">Hotlist</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="targets.html">
+        <i class="bi bi-bullseye"></i><span class="label">Targets</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="users.html">
+        <i class="bi bi-person-badge"></i><span class="label">Users</span>
+      </a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#reportsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-bar-chart-fill"></i><span class="label">Reports</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="reportsSubmenu">
+        <a class="nav-link" href="#">RM Report</a>
+        <a class="nav-link" href="client-report.html">Client Report</a>
+        <a class="nav-link" href="consultant-report.html">Consultant Report</a>
+        <a class="nav-link" href="targets-report.html">Targets Report</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#settingsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-gear-fill"></i><span class="label">Settings</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="settingsSubmenu">
+        <a class="nav-link" href="#">Company Profile</a>
+        <a class="nav-link" href="#">Preferences</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="bi bi-question-circle-fill"></i><span class="label">Help &amp; Support</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <!-- <div class="sidebar-footer">
+    <img src="../images/logo.svg" alt="" class="dot-logo" style="filter:invert(1) brightness(2);">
+    <span class="footer-text">Drive Talent.<br>Deliver Opportunity.</span>
+  </div> -->
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================= -->
+<main class="main-content">
+
+  <!-- Page header + filters -->
+  <div class="page-header">
+    <div>
+      <h5>Bench Sales Dashboard</h5>
+      <p>Track performance, drive engagement, achieve more.</p>
+    </div>
+
+    <form class="filters-bar" role="search">
+      <div class="filter-group">
+        <label for="companySelect">Company</label>
+        <select id="companySelect" class="form-select form-select-sm">
+          <option>Astir</option>
+          <option>Other Client</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="monthSelect">Month</label>
+        <select id="monthSelect" class="form-select form-select-sm">
+          <option>July</option>
+          <option selected>August</option>
+          <option>September</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="yearSelect">Year</label>
+        <select id="yearSelect" class="form-select form-select-sm">
+          <option>2025</option>
+          <option selected>2026</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-run">
+        <i class="bi bi-play-fill"></i> Run
+      </button>
+    </form>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="row g-3 mb-3">
+    <div class="col-6 col-lg-3">
+      <div class="stat-card">
+        <div class="stat-icon teal"><i class="bi bi-layers-fill"></i></div>
+        <div>
+          <div class="stat-label">Submissions</div>
+          <div class="stat-value">298</div>
+          <div class="stat-change up"><i class="bi bi-arrow-up-short"></i>12% <span class="text-muted fw-normal">vs last month</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card">
+        <div class="stat-icon orange"><i class="bi bi-people-fill"></i></div>
+        <div>
+          <div class="stat-label">Interviews</div>
+          <div class="stat-value">38</div>
+          <div class="stat-change up"><i class="bi bi-arrow-up-short"></i>8% <span class="text-muted fw-normal">vs last month</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card">
+        <div class="stat-icon pink"><i class="bi bi-file-earmark-text-fill"></i></div>
+        <div>
+          <div class="stat-label">Confirmations</div>
+          <div class="stat-value">2</div>
+          <div class="stat-change"><i class="bi bi-arrow-up-short"></i>0% <span class="text-muted fw-normal">vs last month</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-lg-3">
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="bi bi-briefcase-fill"></i></div>
+        <div>
+          <div class="stat-label">Placements</div>
+          <div class="stat-value">4</div>
+          <div class="stat-change up"><i class="bi bi-arrow-up-short"></i>33% <span class="text-muted fw-normal">vs last month</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bar + Line charts -->
+  <div class="row g-3 mb-3">
+    <div class="col-lg-6">
+      <div class="panel">
+        <div class="panel-title">
+          <span class="title-icon"><i class="bi bi-bar-chart-line-fill"></i></span>
+          Monthly Sales - August 2026
+        </div>
+        <p class="chart-hint">Drag to rotate &middot; scroll to zoom</p>
+        <div class="chart-wrap chart-3d" id="monthlySales3D"></div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel">
+        <div class="panel-title">
+          <span class="title-icon"><i class="bi bi-graph-up-arrow"></i></span>
+          Sales Trend – 2026
+          <div class="legend-inline">
+            <span><i class="dot" style="background:#16b3a3;"></i>Submissions</span>
+            <span><i class="dot" style="background:#f5a623;"></i>Interviews</span>
+            <span><i class="dot" style="background:#e0507a;"></i>Confirmations</span>
+            <span><i class="dot" style="background:#2fa86a;"></i>Placements</span>
+          </div>
+        </div>
+        <p class="chart-hint">Drag to rotate &middot; scroll to zoom</p>
+        <div class="chart-wrap chart-3d" id="salesTrend3D"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly doughnuts -->
+  <div class="panel mb-3">
+    <div class="panel-title">
+      <span class="title-icon"><i class="bi bi-pie-chart-fill"></i></span>
+      Weekly Sales - August 2026
+    </div>
+    <div class="row g-4 align-items-center">
+      <div class="col-6 col-lg-2">
+        <div class="week-label">Aug 01, 2026 - Aug 07, 2026</div>
+        <div class="doughnut-wrap">
+          <div id="week1Chart" class="weekly-pie-chart" aria-label="Week 1 sales chart"></div>
+          <div class="doughnut-center">85%</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="week-label">Aug 08, 2026 - Aug 14, 2026</div>
+        <div class="doughnut-wrap">
+          <div id="week2Chart" class="weekly-pie-chart" aria-label="Week 2 sales chart"></div>
+          <div class="doughnut-center">90%</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="week-label">Aug 15, 2026 - Aug 21, 2026</div>
+        <div class="doughnut-wrap">
+          <div id="week3Chart" class="weekly-pie-chart" aria-label="Week 3 sales chart"></div>
+          <div class="doughnut-center">88%</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <div class="week-label">Aug 22, 2026 - Aug 31, 2026</div>
+        <div class="doughnut-wrap">
+          <div id="week4Chart" class="weekly-pie-chart" aria-label="Week 4 sales chart"></div>
+          <div class="doughnut-center">86%</div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="week-legend">
+          <div><i class="dot" style="background:#16b3a3;"></i>Submissions</div>
+          <div><i class="dot" style="background:#f5a623;"></i>Interviews</div>
+          <div><i class="dot" style="background:#e0507a;"></i>Confirmations</div>
+          <div><i class="dot" style="background:#2fa86a;"></i>Placements</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sales report table -->
+  <div class="panel">
+    <div class="table-panel-head">
+      <div class="panel-title mb-0">
+        <span class="title-icon"><i class="bi bi-clipboard-data-fill"></i></span>
+        Sales Report – August 2026
+      </div>
+
+      <ul class="nav report-tabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#rmReport" type="button">RM Report</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#clientReport" type="button">Client Report</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#consultantReport" type="button">Consultant Report</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#targetsReport" type="button">Targets Report</button></li>
+      </ul>
+
+      <button class="btn-export">
+        <i class="bi bi-file-earmark-excel-fill"></i> Export to Excel
+      </button>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="rmReport">
+        <div class="table-responsive-wrap">
+          <table class="table report-table mb-0 table-striped">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>RM Name</th>
+                <th>Submissions</th>
+                <th>Interviews</th>
+                <th>Confirmations</th>
+                <th>Placements</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Astir</td><td>Arshad</td><td><a href="#">0</a></td><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Asheesh Boddu</td><td><a href="#">21</a></td><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Hemanth Matta</td><td><a href="#">30</a></td><td>4</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Kalyan K</td><td><a href="#">19</a></td><td>2</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Keerthana</td><td><a href="#">0</a></td><td>0</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Kiran P</td><td><a href="#">22</a></td><td>5</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Rithvik S</td><td><a href="#">25</a></td><td>3</td><td>1</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Shashikumar Marapelly</td><td><a href="#">30</a></td><td>5</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Sivani Budithi</td><td><a href="#">43</a></td><td>8</td><td>0</td><td>0</td></tr>
+              <tr><td>Astir</td><td>Talapalli Lahari</td><td><a href="#">50</a></td><td>8</td><td>0</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="clientReport">
+        <div id="clientReportRoot">
+        <div class="table-responsive-wrap client-scroll">
+          <table class="table report-table client-table mb-0 table-striped">
+            <thead>
+              <tr>
+                <th>Company</th><th>Vendor</th><th>Client</th>
+                <th class="num">Submissions</th><th class="num">Interviews</th><th class="num">Confirmations</th><th class="num">Placements</th>
+              </tr>
+            </thead>
+            <tbody data-cr-body></tbody>
+          </table>
+        </div>
+        <div class="users-table-foot">
+          <span data-cr-showing></span>
+          <div class="pager" data-cr-pager></div>
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="consultantReport">
+        <div id="consultantReportRoot">
+        <div class="table-responsive-wrap client-scroll">
+          <table class="table report-table consultant-table mb-0 table-striped">
+            <thead>
+              <tr>
+                <th class="sortable" data-col="0">Consultant<i class="bi bi-arrow-down-up"></i></th><th>Company</th><th class="sortable" data-col="2">RM Name<i class="bi bi-arrow-down-up"></i></th><th class="sortable" data-col="3">Activity<i class="bi bi-arrow-down-up"></i></th><th class="sortable" data-col="4">Date<i class="bi bi-arrow-down-up"></i></th><th>Vendor</th><th>Client</th><th>Rate</th>
+              </tr>
+            </thead>
+            <tbody data-cr-body></tbody>
+          </table>
+        </div>
+        <div class="users-table-foot">
+          <span data-cr-showing></span>
+          <div class="pager" data-cr-pager></div>
+        </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="targetsReport">
+        <div id="targetsReportRoot">
+        <div class="table-responsive-wrap client-scroll">
+          <table class="table report-table targets-report-table mb-0 table-striped">
+            <thead>
+              <tr>
+                <th rowspan="2" class="left">Company</th><th rowspan="2">RM Name</th>
+                <th colspan="2">Submissions</th><th colspan="2">Interviews</th><th colspan="2">Confirmations</th><th colspan="2">Placements</th><th colspan="2">MSA</th>
+              </tr>
+              <tr class="sub"><th>Targets</th><th>Results</th><th>Targets</th><th>Results</th><th>Targets</th><th>Results</th><th>Targets</th><th>Results</th><th>Targets</th><th>Results</th></tr>
+            </thead>
+            <tbody data-cr-body></tbody>
+          </table>
+        </div>
+        <div class="users-table-foot">
+          <span data-cr-showing></span>
+          <div class="pager" data-cr-pager></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.4.0/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@12.4.0/highcharts-3d.js"></script>
+<!-- ECharts + ECharts-GL power the 3D Monthly Sales & Sales Trend charts -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-gl@2.0.9/dist/echarts-gl.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/client-report.js"></script>
+<script src="../js/consultant-report.js"></script>
+<script src="../js/targets-report.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var cr = ClientReport.mount(document.getElementById("clientReportRoot"), function () { return document.getElementById("companySelect").value; });
+  var co = ConsultantReport.mount(document.getElementById("consultantReportRoot"), function () { return document.getElementById("companySelect").value; });
+  var tg = TargetsReport.mount(document.getElementById("targetsReportRoot"), function () { return document.getElementById("companySelect").value; });
+  var activeTab = "";
+  document.querySelectorAll('[data-bs-toggle="tab"]').forEach(function (b) {
+    b.addEventListener("shown.bs.tab", function () { activeTab = b.dataset.bsTarget; });
+  });
+  document.getElementById("companySelect").addEventListener("change", function () { cr.refresh(); co.refresh(); tg.refresh(); });
+  document.querySelector(".btn-export").addEventListener("click", function () {
+    if (activeTab === "#clientReport") cr.exportCsv();
+    else if (activeTab === "#consultantReport") co.exportCsv();
+    else if (activeTab === "#targetsReport") tg.exportCsv();
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultant Report | Astir</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Project stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER (fixed)
+============================================================= -->
+<header class="topbar">
+  <div class="d-flex align-items-center">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle menu">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="brand">
+      <!-- <img src="../images/logo.svg" alt="Astir logo" height="30">
+      <div class="brand-text">
+        <small>Information. Insight. Results.</small>
+      </div> -->
+      <img src="../images/logo.png" alt="Astir logo" height="30">
+    </div>
+  </div>
+
+  <!-- <div class="topbar-search">
+    <div class="input-group">
+      <span class="input-group-text bg-transparent border-0 p-0 pe-2"><i class="bi bi-search"></i></span>
+      <input type="text" class="form-control p-0" placeholder="Search reports, consultants, clients...">
+    </div>
+  </div> -->
+
+  <div class="topbar-right">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge rounded-pill bg-danger">3</span>
+    </button> -->
+
+    <div class="dropdown">
+      <button class="user-chip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="avatar-circle">SB</span>
+        <span class="user-name">Swaroopa Bhupathi</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>My Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a></li>
+      </ul>
+    </div>
+
+    <button class="btn-logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- ============================================================
+     SIDEBAR (collapsible)
+============================================================= -->
+<nav class="sidebar" id="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <i class="bi bi-house-door-fill"></i><span class="label">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hotlist.html">
+        <i class="bi bi-people-fill"></i><span class="label">Hotlist</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="targets.html">
+        <i class="bi bi-bullseye"></i><span class="label">Targets</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="users.html">
+        <i class="bi bi-person-badge"></i><span class="label">Users</span>
+      </a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#reportsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="true">
+        <i class="bi bi-bar-chart-fill"></i><span class="label">Reports</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu show" id="reportsSubmenu">
+        <a class="nav-link" href="#">RM Report</a>
+        <a class="nav-link" href="client-report.html">Client Report</a>
+        <a class="nav-link active" href="consultant-report.html">Consultant Report</a>
+        <a class="nav-link" href="targets-report.html">Targets Report</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#settingsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-gear-fill"></i><span class="label">Settings</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="settingsSubmenu">
+        <a class="nav-link" href="#">Company Profile</a>
+        <a class="nav-link" href="#">Preferences</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="bi bi-question-circle-fill"></i><span class="label">Help &amp; Support</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <!-- <div class="sidebar-footer">
+    <img src="../images/logo.svg" alt="" class="dot-logo" style="filter:invert(1) brightness(2);">
+    <span class="footer-text">Drive Talent.<br>Deliver Opportunity.</span>
+  </div> -->
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================= -->
+<main class="main-content">
+
+  <div class="page-header">
+    <div>
+      <h1>Consultant Report</h1>
+      <p>Consultant activity by RM, vendor and client.</p>
+    </div>
+    <form class="filters-bar" id="crFilter">
+      <div class="filter-group"><label for="crCompany">Company</label>
+        <select id="crCompany" class="form-select form-select-sm"><option value="Astir">Astir</option><option value="Advent Infotech">Advent Infotech</option><option value="all">--All--</option></select></div>
+      <div class="filter-group"><label for="crMonth">Month</label>
+        <select id="crMonth" class="form-select form-select-sm"><option>July</option><option selected>August</option><option>September</option></select></div>
+      <div class="filter-group"><label for="crYear">Year</label>
+        <select id="crYear" class="form-select form-select-sm"><option>2025</option><option selected>2026</option></select></div>
+      <button type="submit" class="btn btn-run"><i class="bi bi-play-fill"></i> Run</button>
+    </form>
+  </div>
+
+  <div class="panel" id="consultantReportRoot">
+    <div class="table-panel-head">
+      <div class="panel-title mb-0"><span class="title-icon"><i class="bi bi-clipboard-data-fill"></i></span><span id="crTitle">Consultant Report</span></div>
+      <button type="button" class="btn-export" id="crExport"><i class="bi bi-file-earmark-excel-fill"></i> Export to Excel</button>
+    </div>
+    <div class="table-responsive-wrap client-scroll">
+          <table class="table report-table consultant-table mb-0">
+            <thead>
+              <tr>
+                <th class="sortable" data-col="0">Consultant<i class="bi bi-arrow-down-up"></i></th><th>Company</th><th class="sortable" data-col="2">RM Name<i class="bi bi-arrow-down-up"></i></th><th class="sortable" data-col="3">Activity<i class="bi bi-arrow-down-up"></i></th><th class="sortable" data-col="4">Date<i class="bi bi-arrow-down-up"></i></th><th>Vendor</th><th>Client</th><th>Rate</th>
+              </tr>
+            </thead>
+            <tbody data-cr-body></tbody>
+          </table>
+        </div>
+        <div class="users-table-foot">
+          <span data-cr-showing></span>
+          <div class="pager" data-cr-pager></div>
+        </div>
+  </div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/consultant-report.js"></script>
+<script src="../js/consultant-report-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In | Astir Sales Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="../css/login.css" rel="stylesheet">
+</head>
+<body class="login-body">
+
+<div class="login-wrap">
+
+  <!-- Left: brand panel -->
+  <section class="brand-panel">
+    <!-- <img src="../images/logo.png" alt="Astir" class="brand-logo"> -->
+    <!-- <p class="brand-tagline-small">Information. Insight. Results.</p> -->
+
+    <h5>Sales Dashboard</h5>
+    <p class="lead-line">Track. Manage. Grow.</p>
+    <p class="lead-text">Get real-time insights on submissions, interviews, confirmations and placements across clients.</p>
+
+    <ul class="feature-row">
+      <li><span class="f-ico"><i class="bi bi-bar-chart"></i></span><b>Insights</b><small>Data-driven decisions</small></li>
+      <li><span class="f-ico"><i class="bi bi-people"></i></span><b>Efficiency</b><small>Streamline your workflow</small></li>
+      <li><span class="f-ico"><i class="bi bi-bullseye"></i></span><b>Targets</b><small>Achieve more</small></li>
+      <li><span class="f-ico"><i class="bi bi-graph-up-arrow"></i></span><b>Success</b><small>Build a stronger tomorrow</small></li>
+    </ul>
+
+    <!-- Illustration: laptop showing a mini dashboard -->
+    <svg class="laptop" viewBox="0 0 420 250" aria-hidden="true">
+      <rect x="40" y="10" width="340" height="205" rx="12" fill="#2b3a55"/>
+      <rect x="50" y="20" width="320" height="185" rx="6" fill="#fff"/>
+      <rect x="50" y="20" width="60" height="185" rx="6" fill="#1f3a68"/>
+      <rect x="125" y="120" width="18" height="60" fill="#2196c9"/><rect x="152" y="95" width="18" height="85" fill="#2196c9"/>
+      <rect x="179" y="110" width="18" height="70" fill="#5bc7e0"/><rect x="206" y="75" width="18" height="105" fill="#2196c9"/>
+      <rect x="233" y="100" width="18" height="80" fill="#5bc7e0"/>
+      <circle cx="315" cy="85" r="30" fill="none" stroke="#16b3a3" stroke-width="14"/>
+      <circle cx="315" cy="85" r="30" fill="none" stroke="#f5a623" stroke-width="14" stroke-dasharray="30 160" stroke-dashoffset="-20"/>
+      <path d="M125 195 Q160 165 195 185 T265 170 T355 180" fill="none" stroke="#2196c9" stroke-width="3"/>
+      <path d="M10 225 H410 L392 240 H28 Z" fill="#c8d0dc"/>
+    </svg>
+
+    <!-- <div class="quote">“Connecting Talent with Opportunities”</div> -->
+  </section>
+
+  <!-- Right: sign-in card -->
+  <section class="form-panel">
+    <div class="login-card">
+      <!-- <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span> -->
+       <img src="../images/logo.png" alt="Astir" class="brand-logo mb-4">
+      <!-- <h3>Welcome Back</h3> -->
+      <p class="sub">Sign in to your Sales Dashboard</p>
+
+      <div id="loginError" class="alert alert-danger d-none py-2" role="alert"></div>
+
+      <form id="loginForm" novalidate>
+        <label for="email" class="form-label">Email</label>
+        <div class="input-icon mb-3">
+          <i class="bi bi-envelope"></i>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" autocomplete="username" required>
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+
+        <label for="password" class="form-label">Password</label>
+        <div class="input-icon mb-3">
+          <i class="bi bi-lock"></i>
+          <input type="password" id="password" class="form-control" placeholder="Enter your password" autocomplete="current-password" required>
+          <button type="button" class="pw-toggle" id="pwToggle" aria-label="Show password"><i class="bi bi-eye"></i></button>
+          <div class="invalid-feedback">Please enter your password.</div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-check mb-0">
+            <input class="form-check-input" type="checkbox" id="remember">
+            <label class="form-check-label" for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-signin">Sign In</button>
+      </form>
+
+      <!-- <div class="or-divider"><span>OR</span></div>
+      <div class="text-center"><img src="../images/logo.svg" alt="Astir" height="34"><div class="card-tag">Information. Insight. Results.</div></div> -->
+    </div>
+  </section>
+
+</div>
+
+<script src="../js/login.js"></script>
+</body>
+</html>

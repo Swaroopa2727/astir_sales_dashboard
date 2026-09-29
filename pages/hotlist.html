@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotlist | Astir</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Project stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER (fixed)
+============================================================= -->
+<header class="topbar">
+  <div class="d-flex align-items-center">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle menu">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="brand">
+      <!-- <img src="../images/logo.svg" alt="Astir logo" height="30">
+      <div class="brand-text">
+        <small>Information. Insight. Results.</small>
+      </div> -->
+      <img src="../images/logo.png" alt="Astir logo" height="30">
+    </div>
+  </div>
+
+  <!-- <div class="topbar-search">
+    <div class="input-group">
+      <span class="input-group-text bg-transparent border-0 p-0 pe-2"><i class="bi bi-search"></i></span>
+      <input type="text" class="form-control p-0" placeholder="Search consultants, RM name, keyword...">
+    </div>
+  </div> -->
+
+  <div class="topbar-right">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge rounded-pill bg-danger">3</span>
+    </button> -->
+
+    <div class="dropdown">
+      <button class="user-chip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="avatar-circle">SB</span>
+        <span class="user-name">Swaroopa Bhupathi</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>My Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a></li>
+      </ul>
+    </div>
+
+    <button class="btn-logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- ============================================================
+     SIDEBAR (collapsible)
+============================================================= -->
+<nav class="sidebar" id="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <i class="bi bi-house-door-fill"></i><span class="label">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="hotlist.html">
+        <i class="bi bi-people-fill"></i><span class="label">Hotlist</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="targets.html">
+        <i class="bi bi-bullseye"></i><span class="label">Targets</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="users.html">
+        <i class="bi bi-person-badge"></i><span class="label">Users</span>
+      </a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#reportsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-bar-chart-fill"></i><span class="label">Reports</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="reportsSubmenu">
+        <a class="nav-link" href="#">RM Report</a>
+        <a class="nav-link" href="client-report.html">Client Report</a>
+        <a class="nav-link" href="consultant-report.html">Consultant Report</a>
+        <a class="nav-link" href="targets-report.html">Targets Report</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#settingsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-gear-fill"></i><span class="label">Settings</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="settingsSubmenu">
+        <a class="nav-link" href="#">Company Profile</a>
+        <a class="nav-link" href="#">Preferences</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="bi bi-question-circle-fill"></i><span class="label">Help &amp; Support</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <!-- <div class="sidebar-footer">
+    <img src="../images/logo.svg" alt="" class="dot-logo" style="filter:invert(1) brightness(2);">
+    <span class="footer-text">Drive Talent.<br>Deliver Opportunity.</span>
+  </div> -->
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================= -->
+<main class="main-content">
+
+  <div class="page-header">
+    <div class="title-wrap">
+      <!-- <i class="bi bi-people-fill title-icon-lg"></i> -->
+      <div>
+        <h5>Hotlist</h5>
+        <p>Manage consultants and track their assignment status.</p>
+      </div>
+    </div>
+    <div class="d-flex gap-2 flex-wrap">
+      <a href="add-consultant.html" class="btn-add" id="addBtn"><i class="bi bi-plus-circle-fill"></i> Add New Consultant</a>
+      <button type="button" class="btn-outline-blue" id="downloadBtn"><i class="bi bi-download"></i> Download</button>
+    </div>
+  </div>
+
+  <div class="panel hotlist-panel">
+    <div class="hotlist-filters">
+      <div class="inline-group">
+        <label>RM Name</label>
+        <div class="rm-dd" id="rmDd">
+          <button type="button" class="rm-dd-btn" id="rmBtn"><span id="rmLabel">--All--</span><i class="bi bi-chevron-down"></i></button>
+          <div class="rm-dd-panel d-none" id="rmPanel">
+            <div class="rm-dd-search"><i class="bi bi-search"></i><input type="text" id="rmSearch" placeholder="Search RM name..."></div>
+            <ul id="rmList"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-check mb-0">
+        <input class="form-check-input" type="checkbox" id="includeInactive">
+        <label class="form-check-label" for="includeInactive">Include InActivated</label>
+      </div>
+      <span class="legend-inactive ms-auto"><span class="swatch"></span>InActivated</span>
+    </div>
+
+    <div class="table-responsive-wrap">
+      <table class="table report-table hotlist-table mb-0">
+        <thead>
+          <tr>
+            <th class="sortable" data-key="date">Assigned Date<i class="bi bi-arrow-down-up"></i></th>
+            <th class="sortable" data-key="consultant">Consultant<i class="bi bi-arrow-down-up"></i></th>
+            <th class="sortable" data-key="rm">RM Name<i class="bi bi-arrow-down-up"></i></th>
+            <th class="sortable" data-key="priority">Priority<i class="bi bi-arrow-down-up"></i></th>
+            <th>Phone</th>
+            <th class="sortable" data-key="email">Email<i class="bi bi-arrow-down-up"></i></th>
+            <th>Visa</th>
+            <th>Year of Exp</th>
+            <th>Rate/RateType</th>
+            <th class="sortable" data-key="location">Location<i class="bi bi-arrow-down-up"></i></th>
+            <th class="sortable" data-key="tech">Technology<i class="bi bi-arrow-down-up"></i></th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="hotBody"></tbody>
+      </table>
+    </div>
+
+    <div class="users-table-foot">
+      <span id="showingText"></span>
+      <div class="pager" id="pager"></div>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/hotlist.js"></script>
+</body>
+</html>

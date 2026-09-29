@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Consultant | Astir</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Project stylesheet -->
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER (fixed)
+============================================================= -->
+<header class="topbar">
+  <div class="d-flex align-items-center">
+    <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle menu">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="brand">
+      <!-- <img src="../images/logo.svg" alt="Astir logo" height="30">
+      <div class="brand-text">
+        <small>Information. Insight. Results.</small>
+      </div> -->
+      <img src="../images/logo.png" alt="Astir logo" height="30">
+    </div>
+  </div>
+
+  <!-- <div class="topbar-search">
+    <div class="input-group">
+      <span class="input-group-text bg-transparent border-0 p-0 pe-2"><i class="bi bi-search"></i></span>
+      <input type="text" class="form-control p-0" placeholder="Search consultants, hotlist, targets...">
+    </div>
+  </div> -->
+
+  <div class="topbar-right">
+    <!-- <button class="icon-btn" aria-label="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="badge rounded-pill bg-danger">3</span>
+    </button> -->
+
+    <div class="dropdown">
+      <button class="user-chip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="avatar-circle">SB</span>
+        <span class="user-name">Swaroopa Bhupathi</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>My Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Account Settings</a></li>
+      </ul>
+    </div>
+
+    <button class="btn-logout">
+      <i class="bi bi-box-arrow-right"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile backdrop -->
+<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+<!-- ============================================================
+     SIDEBAR (collapsible)
+============================================================= -->
+<nav class="sidebar" id="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <i class="bi bi-house-door-fill"></i><span class="label">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="hotlist.html">
+        <i class="bi bi-people-fill"></i><span class="label">Hotlist</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="targets.html">
+        <i class="bi bi-bullseye"></i><span class="label">Targets</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="users.html">
+        <i class="bi bi-person-badge"></i><span class="label">Users</span>
+      </a>
+    </li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#reportsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-bar-chart-fill"></i><span class="label">Reports</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="reportsSubmenu">
+        <a class="nav-link" href="#">RM Report</a>
+        <a class="nav-link" href="client-report.html">Client Report</a>
+        <a class="nav-link" href="consultant-report.html">Consultant Report</a>
+        <a class="nav-link" href="targets-report.html">Targets Report</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#settingsSubmenu" data-bs-toggle="collapse" role="button" aria-expanded="false">
+        <i class="bi bi-gear-fill"></i><span class="label">Settings</span><i class="bi bi-chevron-right chevron"></i>
+      </a>
+      <div class="collapse submenu" id="settingsSubmenu">
+        <a class="nav-link" href="#">Company Profile</a>
+        <a class="nav-link" href="#">Preferences</a>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="bi bi-question-circle-fill"></i><span class="label">Help &amp; Support</span>
+      </a>
+    </li> -->
+  </ul>
+
+  <!-- <div class="sidebar-footer">
+    <img src="../images/logo.svg" alt="" class="dot-logo" style="filter:invert(1) brightness(2);">
+    <span class="footer-text">Drive Talent.<br>Deliver Opportunity.</span>
+  </div> -->
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================= -->
+<main class="main-content">
+
+  <div class="page-header">
+    <div class="title-wrap">
+      <a href="hotlist.html" class="back-btn" aria-label="Back to hotlist"><i class="bi bi-arrow-left"></i></a>
+      <span class="edit-avatar"><i class="bi bi-person-fill"></i></span>
+      <div>
+        <h1>Edit Consultant</h1>
+        <p>Update consultant details and assignment.</p>
+      </div>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb page-breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="hotlist.html">Hotlist</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Edit Consultant</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="panel form-panel">
+    <form id="consultantForm" novalidate>
+      <div class="text-end req-note"><span class="req">* Mandatory fields</span></div>
+      <div class="consultant-grid">
+    <div class="grid-col">
+      <div class="fld"><i class="bi bi-person fld-icon"></i><div class="fld-body">
+        <label for="firstName">First Name <b class="req">*</b></label>
+        <input type="text" id="firstName" class="form-control" placeholder="Enter first name" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-person fld-icon"></i><div class="fld-body">
+        <label for="middleName">Middle Name</label>
+        <input type="text" id="middleName" class="form-control" placeholder="Enter middle name" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-person fld-icon"></i><div class="fld-body">
+        <label for="lastName">Last Name <b class="req">*</b></label>
+        <input type="text" id="lastName" class="form-control" placeholder="Enter last name" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-telephone fld-icon"></i><div class="fld-body">
+        <label for="phone">Primary Phone <b class="req">*</b></label>
+        <input type="tel" id="phone" class="form-control" placeholder="Enter primary phone number" >
+        <div class="invalid-feedback">Enter a valid phone number.</div></div></div>
+      <div class="fld"><i class="bi bi-telephone fld-icon"></i><div class="fld-body">
+        <label for="phone2">Secondary Phone</label>
+        <input type="tel" id="phone2" class="form-control" placeholder="Enter secondary phone number" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-envelope fld-icon"></i><div class="fld-body">
+        <label for="email">Email <b class="req">*</b></label>
+        <input type="email" id="email" class="form-control" placeholder="Enter email address" >
+        <div class="invalid-feedback">Enter a valid email address.</div></div></div>
+      <div class="fld"><i class="bi bi-envelope fld-icon"></i><div class="fld-body">
+        <label for="email2">Secondary Email</label>
+        <input type="email" id="email2" class="form-control" placeholder="Enter secondary email address" >
+        <div class="invalid-feedback">Enter a valid email address.</div></div></div>
+      <div class="fld"><i class="bi bi-building fld-icon"></i><div class="fld-body">
+        <label for="company">Company <b class="req">*</b></label>
+        <select id="company" class="form-select"><option value="">--Select--</option><option>Astir</option><option>Advent Infotech</option></select>
+        <div class="invalid-feedback">Please select a company.</div></div></div>
+    </div>
+    <div class="grid-col">
+      <div class="fld"><i class="bi bi-person-vcard fld-icon"></i><div class="fld-body">
+        <label for="visa">Visa <b class="req">*</b></label>
+        <select id="visa" class="form-select"><option value="">--Select--</option><option>H1B(W2)</option><option>H1 Transfer</option><option>H4 EAD</option><option>OPT</option><option>CPT</option><option>TN</option><option>L2</option><option>Green Card</option><option>US Citizen</option></select>
+        <div class="invalid-feedback">Please select a visa.</div></div></div>
+      <div class="fld"><i class="bi bi-briefcase fld-icon"></i><div class="fld-body">
+        <label for="exp">Year of Experience <b class="req">*</b></label>
+        <input type="number" id="exp" class="form-control" placeholder="Enter years of experience" min="0">
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-currency-dollar fld-icon"></i><div class="fld-body">
+        <label for="rate">Rate <b class="req">*</b></label>
+        <div class="input-group"><span class="input-group-text">$</span><input type="number" min="0" id="rate" class="form-control" aria-label="Rate"><select id="rateType" class="form-select rate-type"><option value="">--Rate Type--</option><option>Hourly</option><option>Annual</option></select></div>
+        <div class="invalid-feedback">Enter a rate and choose a rate type.</div></div></div>
+      <div class="fld"><i class="bi bi-geo-alt fld-icon"></i><div class="fld-body">
+        <label for="city">City <b class="req">*</b></label>
+        <input type="text" id="city" class="form-control" placeholder="Enter city" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-geo-alt fld-icon"></i><div class="fld-body">
+        <label for="state">State <b class="req">*</b></label>
+        <select id="state" class="form-select"><option value="">--Select--</option><option>AL</option><option>AZ</option><option>CA</option><option>CO</option><option>CT</option><option>FL</option><option>GA</option><option>IL</option><option>IN</option><option>MA</option><option>MD</option><option>MI</option><option>NC</option><option>NJ</option><option>NY</option><option>OH</option><option>PA</option><option>TX</option><option>VA</option><option>WA</option></select>
+        <div class="invalid-feedback">Please select a state.</div></div></div>
+      <div class="fld"><i class="bi bi-house-door fld-icon"></i><div class="fld-body">
+        <label for="relocYes">Relocation <b class="req">*</b></label>
+        <div class="radio-row"><div class="form-check"><input class="form-check-input" type="radio" name="relocation" id="relocYes" value="Yes"><label class="form-check-label" for="relocYes">Yes</label></div><div class="form-check"><input class="form-check-input" type="radio" name="relocation" id="relocNo" value="No"><label class="form-check-label" for="relocNo">No</label></div></div>
+        <div class="invalid-feedback">Please choose Yes or No.</div></div></div>
+      <div class="fld"><i class="bi bi-person fld-icon"></i><div class="fld-body">
+        <label for="rm">RM Executive <b class="req">*</b></label>
+        <select id="rm" class="form-select"><option value="">--Select--</option></select>
+        <div class="invalid-feedback">Please select an RM.</div></div></div>
+      <div class="fld"><i class="bi bi-flag fld-icon"></i><div class="fld-body">
+        <label for="priority">Priority <b class="req">*</b></label>
+        <select id="priority" class="form-select"><option value="">--Select--</option><option>High</option><option>Medium</option><option>Low</option></select>
+        <div class="invalid-feedback">Please select a priority.</div></div></div>
+    </div>
+    <div class="grid-col">
+      <div class="fld"><i class="bi bi-calendar3 fld-icon"></i><div class="fld-body">
+        <label for="dateAdded">Date Added <b class="req">*</b></label>
+        <input type="date" id="dateAdded" class="form-control">
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-link-45deg fld-icon"></i><div class="fld-body">
+        <label for="source">Source <b class="req">*</b></label>
+        <select id="source" class="form-select"><option value="">--Select--</option><option>W2-Employee</option><option>LinkedIn</option><option>Dice</option><option>Monster</option><option>Referral</option><option>Job Portal</option><option>Other</option></select>
+        <div class="invalid-feedback">Please select a source.</div></div></div>
+      <div class="fld"><i class="bi bi-calendar3 fld-icon"></i><div class="fld-body">
+        <label for="assignedDate">Assigned Date <b class="req">*</b></label>
+        <input type="date" id="assignedDate" class="form-control">
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-bar-chart fld-icon"></i><div class="fld-body">
+        <label for="marketingStatus">Marketing Status <b class="req">*</b></label>
+        <select id="marketingStatus" class="form-select"><option value="">--Select--</option><option>Hot List</option><option>Active</option><option>On Hold</option><option>Placed</option></select>
+        <div class="invalid-feedback">Please select a status.</div></div></div>
+      <div class="fld"><i class="bi bi-briefcase fld-icon"></i><div class="fld-body">
+        <label for="onProject">Currently on Project <b class="req">*</b></label>
+        <select id="onProject" class="form-select"><option value="">--Select--</option><option>Yes</option><option>No</option></select>
+        <div class="invalid-feedback">Please select an option.</div></div></div>
+      <div class="fld"><i class="bi bi-person fld-icon"></i><div class="fld-body">
+        <label for="employeeStatus">Employee Status <b class="req">*</b></label>
+        <select id="employeeStatus" class="form-select"><option value="">--Select--</option><option>Current Employee</option><option>Former Employee</option></select>
+        <div class="invalid-feedback">Please select a status.</div></div></div>
+      <div class="fld"><i class="bi bi-building fld-icon"></i><div class="fld-body">
+        <label for="entity">Entity <b class="req">*</b></label>
+        <select id="entity" class="form-select"><option value="">--Select--</option><option>W2 Astir IT</option><option>C2C Astir IT</option><option>1099 Astir IT</option></select>
+        <div class="invalid-feedback">Please select an entity.</div></div></div>
+      <div class="fld"><i class="bi bi-code-slash fld-icon"></i><div class="fld-body">
+        <label for="tech">Technology <b class="req">*</b></label>
+        <input type="text" id="tech" class="form-control" placeholder="Enter technology" >
+        <div class="invalid-feedback">This field is required.</div></div></div>
+      <div class="fld"><i class="bi bi-file-earmark-text fld-icon"></i><div class="fld-body">
+        <label for="skills">Summary of Skills</label>
+        <textarea id="skills" class="form-control" rows="3" placeholder="Enter summary of skills..."></textarea>
+        <div class="invalid-feedback">This field is required.</div></div></div>
+    </div>
+      </div>
+
+      <div class="consultant-foot edit-foot">
+        <div class="fld resume-fld"><i class="bi bi-paperclip fld-icon"></i><div class="fld-body">
+          <label for="resume">Upload Resume</label>
+          <input type="file" id="resume" class="form-control" accept=".pdf,.doc,.docx">
+          <small class="text-muted d-block mt-1">Supported formats: PDF, DOC, DOCX (Max size: 5MB)</small>
+          <div class="invalid-feedback" id="resumeErr">Please upload a PDF, DOC or DOCX file up to 5MB.</div>
+          <div class="view-resume mt-2 d-none" id="viewResume">View Resume: <a href="#" id="resumeLink"><i class="bi bi-file-earmark-pdf-fill"></i> <span id="resumeName"></span></a>
+            <button type="button" class="btn btn-sm btn-light border ms-2" id="resumeDelete" aria-label="Remove resume"><i class="bi bi-trash"></i></button></div>
+        </div></div>
+        <div class="form-actions foot-actions">
+          <button type="submit" class="btn-save">Update</button>
+          <a href="hotlist.html" class="btn-cancel grey">Cancel</a>
+        </div>
+      </div>
+      <div id="formAlert" class="alert alert-success d-none mt-3" role="alert">Consultant updated successfully. Redirecting&hellip;</div>
+    </form>
+  </div>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/edit-consultant.js"></script>
+</body>
+</html>
